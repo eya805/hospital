@@ -1,6 +1,4 @@
 package hospital;
-import java.util.ArrayList;
-import java.util.List;
 public class Patient extends Person{
 
     protected int Doctor_id;
@@ -12,17 +10,6 @@ public class Patient extends Person{
         this.Doctor_id = Doctor_id;
 
     }
-
-
-    // constructor 2
-    public Patient(String name,String userName,String password,int age) {
-        super(name,userName,password,age);
-
-    }
-
-
-
-
 
 
     // get Doctor id
