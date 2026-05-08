@@ -1,8 +1,10 @@
+package Main ;
+
+//import Main.input;
 import datebase.DoctorDAO;
 import datebase.PatientDAO;
 import hospital.Doctor;
 import hospital.Patient;
-
 
 public class service {
 
@@ -14,21 +16,20 @@ public class service {
                     2- change age
                     3- change specialty
                     4- exit""");
+
             int choice = input.takeInt();
+
             if(choice == 1){
                 System.out.println("Enter New Password");
                 d.setPassword(input.takeStr());
-                // ✅ بيحفظ في الـ DB
                 DoctorDAO.updatePassword(d);
             } else if (choice == 2){
                 System.out.println(" Enter New Age");
                 d.setAge(input.takeInt());
-                // ✅ بيحفظ في الـ DB
                 DoctorDAO.updateAge(d);
             } else if (choice == 3){
                 System.out.println(" Enter New Specialty");
                 d.setSpecialty(input.takeStr());
-                // ✅ بيحفظ في الـ DB
                 DoctorDAO.updateSpecialty(d);
             }else if (choice == 4){
                 break;
@@ -49,12 +50,10 @@ public class service {
             if (choice == 1) {
                 System.out.println("Enter New Password");
                 p.setPassword(input.takeStr());
-                // ✅ بيحفظ في الـ DB
                 PatientDAO.updatePassword(p);
             } else if (choice == 2) {
                 System.out.println("Enter New Age");
                 p.setAge(input.takeInt());
-                // ✅ بيحفظ في الـ DB
                 PatientDAO.updateAge(p);
                 System.out.printf("age updated %d",p.getAge());
             } else if (choice == 3) {

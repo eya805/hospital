@@ -1,15 +1,21 @@
+package Main;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class input {
 
+    private static Scanner input = new Scanner(System.in);
     // take int and check it
     public static int takeInt(){
-        Scanner input = new Scanner(System.in);
+
         while(true){
             try{
-                return  input.nextInt();
+                int value = input.nextInt();
+                input.nextLine();  // used to clean up the puffer
+                return  value;
             } catch(InputMismatchException e){
+                input.nextLine(); // used to clean up the puffer
                 return 0;
             }
 
@@ -19,7 +25,7 @@ public class input {
 
     // Take String and check it
     public static String takeStr() {
-        Scanner input = new Scanner(System.in);
+
         while (true) {
             try {
                 String value = input.nextLine().trim();
